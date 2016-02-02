@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Список объявлений</title>
+</head>
+<body>
+{% for ads in object_list %}
+    <div>
+        <h3><a href="{% url "ads_detail" ads.pk %}">{{ ads.title }}</a></h3>
+        <div>
+            Колличество просмотров - {{ ads.get_count_views }}
+        </div>
+    </div>
+{% endfor %}
+</body>
+</html>
